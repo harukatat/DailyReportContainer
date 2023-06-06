@@ -1,10 +1,10 @@
 # 0. ubuntu:22.04をベースにする
 FROM ubuntu:22.04
 
-# 1. DailyReportContainerディレクトリをルートディレクトリに作成して
+# 1. command_tutorialディレクトリをルートディレクトリに作成して
 #    そのなかにfirstvi.txtを作成
-RUN mkdir /DailyReportContainer
-RUN touch /DailyReportContainer/firstvi.txt
+RUN mkdir /command_tutorial
+RUN touch /command_tutorial/firstvi.txt
 
 # 2. viのインストール
 RUN apt update
