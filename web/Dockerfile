@@ -3,12 +3,9 @@ FROM ubuntu:22.04
 
 # 1. command_tutorialディレクトリをルートディレクトリに作成して
 #    そのなかにfirstvi.txtを作成
-RUN mkdir /DailyReportContainer
-RUN touch /DailyReportContainer/firstvi.txt
 
 # 2. viのインストール
 RUN apt update
-RUN apt-get update
 RUN apt -y install vim
 
 # 3. ubuntuの日本語対応
@@ -41,7 +38,7 @@ RUN echo "deb https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION
 RUN apt update
 RUN apt -y install temurin-17-jdk=17.0.5.0.0+8
 RUN mkdir /var/www/java
-COPY TutorialDevelop-0.0.1-SNAPSHOT.jar /var/www/java/
+COPY DailyReportSystem-0.0.1-SNAPSHOT.jar /var/www/java/
 RUN a2enmod proxy
 RUN a2enmod proxy_ajp
 RUN echo "ProxyPass / ajp://localhost:8009/" >> /etc/apache2/apache2.conf
